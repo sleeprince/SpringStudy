@@ -14,7 +14,7 @@ public class ContentDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<HashMap> getData(){		
+	public List<HashMap> getData(){	
 		return sqlSession.selectList("sql.selectContent");
 	}
 	
