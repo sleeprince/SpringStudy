@@ -27,7 +27,7 @@ $(document).ready(() => {
 			$("#mark").val((marks=="")? input:(marks + "," + input));
 			EVENT0.history("입력받은 연산 기호 : " + input);
 			
-			$("#value").val(0);			
+			$("#value").val(0);	
 		},
 		reset : () => {
 			$("#value").val(0);

@@ -20,5 +20,6 @@ public class HomeDao {
 	public List<HashMap> getTable(int no) {
 		return sqlSession.selectList("sql.select", no);
 		
-	}
+	}	
+	
 }

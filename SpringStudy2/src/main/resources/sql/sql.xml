@@ -16,4 +16,35 @@
   	select * from timestable where number = #{no} order by multiplier
   </select>
   
+  <select id="selectContent" resultType="HashMap">
+  	select * from contents order by number DESC
+  </select>
+  
+  <select id="selectApp" parameterType="Integer" resultType="HashMap">
+  	select * from contents where approval = ${app} order by number DESC
+  </select>
+  
+  <select id="selectOne" parameterType="Integer" resultType="HashMap">
+  	select * from contents where number = ${num} order by number DESC
+  </select>
+  
+  <select id="getLastest" resultType="Integer">
+  	select number from contents order by number DESC LIMIT 1
+  </select>
+  
+  <insert id="insertOne" parameterType="HashMap">
+  	insert into contents
+  		(`title`,`content`,`approval`)
+	VALUE 
+		(#{title},#{content},#{approval})
+  </insert>
+  
+  <update id="updateOne" parameterType="HashMap">
+  	update contents SET title = #{title}, content = #{content} WHERE number = #{number}
+  </update>
+  
+  <update id="updateApp" parameterType="HashMap">
+  	update contents SET approval = #{approval} WHERE number = #{number}
+  </update>
+  
 </mapper>
