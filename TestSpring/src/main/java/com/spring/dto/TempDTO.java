@@ -14,11 +14,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TempDTO {
-	
+
 	int no;
 	String title;
 	String content;
 	boolean accept;
 	String regDate;
-	
+	Object type;
+
 }

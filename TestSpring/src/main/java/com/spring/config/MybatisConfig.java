@@ -13,17 +13,17 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
 public class MybatisConfig {
-	
+
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.mariadb.jdbc.Driver");
-		dataSource.setUrl("jdbc:mariadb://localhost:3306/study");
+		dataSource.setUrl("jdbc:mariadb://localhost:3306/test");
 		dataSource.setUsername("root");
 		dataSource.setPassword("1q2w3e4r");
 		return dataSource;
 	}
-	
+
 	@Bean
 	public SqlSessionFactory sqlSessionFactory(DataSource dataSource, ApplicationContext applicationContext) throws Exception {
 		SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
@@ -31,9 +31,9 @@ public class MybatisConfig {
 		sessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/sql/*.xml"));
 		return sessionFactoryBean.getObject();
 	}
-	
+
 	@Bean
-	public SqlSession sqlSession(SqlSessionFactory sqlSessionFactory) throws Exception {		
+	public SqlSession sqlSession(SqlSessionFactory sqlSessionFactory) throws Exception {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 

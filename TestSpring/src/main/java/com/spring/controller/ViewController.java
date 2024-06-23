@@ -12,13 +12,18 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class ViewController {
-	
+
 	private final ViewService viewService;
-	
+
 	@GetMapping("/test")
 	public String test(Model model) {
 		model.addAttribute("dto", viewService.test(TempDTO.builder().no(1).build()));
 		return "test";
+	}
+
+	@GetMapping("/")
+	public String index() {
+		return "index";
 	}
 
 }
