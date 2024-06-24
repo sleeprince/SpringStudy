@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql">
+
+	<select id="findAll" parameterType="com.spring.myDTO.MyDTO" resultType="com.spring.myDTO.MyDTO">
+		SELECT *
+		FROM temp1
+		<where>
+			<if test="type != null">AND accept = #{accept}</if>
+		</where>
+		ORDER BY no DESC
+	</select>
+	
+	<select id="findOne" parameterType="Integer" resultType="com.spring.myDTO.MyDTO">
+		SELECT *
+		FROM temp1
+		WHERE no = #{no}
+	</select>
+	
+	<update id="update" parameterType="com.spring.myDTO.MyDTO">
+		UPDATE temp1
+		SET	title = #{title},
+			content = #{content}
+		WHERE no = #{no}
+	</update>
+	
+	<update id="accept" parameterType="com.spring.myDTO.MyDTO">
+		UPDATE temp1
+		SET	accept = #{accept}
+		WHERE no = #{no}
+	</update>
+	
+	<insert id="save" parameterType="com.spring.myDTO.MyDTO">
+		INSERT INTO temp1
+			(`title`, `content`)
+		VALUE
+			(#{title}, #{content})
+		<selectKey resultType="Integer" keyProperty="no" order="AFTER">
+			SELECT LAST_INSERT_ID() AS no
+		</selectKey>
+		
+	</insert>
+	
+</mapper>
