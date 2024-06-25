@@ -31,7 +31,7 @@ public class ViewController {
 	}
 	
 	@GetMapping("/detail")
-	public String detail() {		
+	public String detail() {
 		return "redirect:/list";
 	}
 	
