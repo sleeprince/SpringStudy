@@ -1,0 +1,74 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="module" src="/home.js" ></script>
+	<style>
+		
+		.btns {
+			width: 210px;
+			left: calc(50% - 105px);
+			position: relative;			
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr; 
+			gap: 10px;													
+		}
+		.btn{
+			text-align: center;
+			background-color: green;						
+			border-style: solid;	
+			border-width: 1px;
+		}
+		.btn:hover {
+			cursor: pointer;
+			color: grey;
+			background-color:orange;
+			box-shadow:5px 5px 10px 5px rgba(77, 71, 71, 0.2);
+		}
+		a{			
+			color: white;
+			font-weight:bold;
+			text-decoration: none;
+		}
+		.tableArea{
+			display: flex;
+			justify-content: center;
+		}
+		table{
+			width: 15%;
+			text-align: center;
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th{
+			color: white;
+			background-color: #444444;
+			border: 1px solid black;
+		}
+		td{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center;">데이터 목록</h1>
+	<div class="btns">
+		<div class="btn">
+			<a href="/" id="0">추가!</a>
+		</div>
+		<div class="btn">
+			<a href="/" id="1">오케이!</a>		
+		</div>
+		<div class="btn">
+			<a href="/" id="2">되돌려!</a>		
+		</div>
+	</div>
+	<br>
+	<div class="tableArea">
+		<table></table>
+	</div>
+</body>
+
+</html>
