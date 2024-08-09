@@ -22,7 +22,7 @@ public class T1Dao {
 	}
 	
 	public List<Map> findAll(){
-		return sql2.selectList("sql.findAll");
+		return sql1.selectList("sql.findAll");
 	}
 	
 	public int insert(Map map) {
