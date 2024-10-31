@@ -1,4 +1,7 @@
 $(document).ready(() =>{
+	const EVENT1 = (e) => {
+		
+	}
 	const getList = (data) => {
 		//console.log(data);
 		$("#list").empty();
@@ -28,4 +31,5 @@ $(document).ready(() =>{
 		$.post(url).done(event);	
 	}
 	getData("/", getList);
+	$("button").on("click", EVENT1);
 });
